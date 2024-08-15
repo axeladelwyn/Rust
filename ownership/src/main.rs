@@ -1,7 +1,3 @@
 fn main() {
-    
-    {
-        let s = "hello";
-        println!("{}", s);
-    }
+    let s = String::from("hello");
 }
