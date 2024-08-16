@@ -47,6 +47,7 @@ fn main() {
     black.display();
 
     origin.display();
+
 }
 
 struct Rectangle {
