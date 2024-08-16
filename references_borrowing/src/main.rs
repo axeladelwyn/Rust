@@ -1,5 +1,10 @@
 fn main() {
-    let mut s = String::from("hello");
+let reference_to_nothing = dangle();
+println!("{}", reference_to_nothing);
+}
 
-    println!("{}",s);
+fn  dangle() -> &String {
+    let s = String::from("hello");
+
+    &s
 }
