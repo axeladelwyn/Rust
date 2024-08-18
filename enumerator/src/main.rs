@@ -15,8 +15,17 @@ fn main() {
         None => None
     };
     println!("Sum: {:?}", sum);
-}
 
+    let mut vec: Vec<usize> = Vec::new();
+    vec.push(10);
+    vec.push(20);
+    vec.push(30);
+
+    for value in &vec {
+        println!("{}", value);
+    }
+        
+}
 enum Option<T> {
     None,
     Some(T),
