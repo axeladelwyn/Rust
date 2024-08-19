@@ -1,82 +1,21 @@
-use std::fmt::{self, Formatter, Display};
-
-struct City {
-    name: &'static str,
-    lat: f32,
-    lon: f32,
-}
-
-impl Display for City {
-    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-        let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
-        let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
-
-        write!(f, "{}: {:.3}°{} {:.3}°{}", self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
-
-    }
-}
-
-#[derive(Debug)]
-struct Color {
-    red: u8,
-    green: u8,
-    blue: u8,
-}
-
-impl Display for Color {
-    fn fmt(&self, f: &mut Formatter) -> fmt::Result { 
-        let rgb: u32 = (self.red as u32) * 65536 + (self.green as u32) * 256 + (self.blue as u32);
-        write!(f, "RGB ({}, {}, {}) 0x{:06X}", self.red, self.green, self.blue, rgb)
-    }
-}
-
-#[allow(unused_variables)]
-#[allow(unused_assignments)]
 fn main() {
+    println!("1 + 2 = {}", 1u32  + 2);
 
-let foo: i64 = 3735928559;
-println!("0x{:X}", foo);
-println!("0o{:o}", foo);
+    println!("1 - 2 = {}", 1i32 - 2);
 
-    for city in [
-        City { name: "Dublin", lat: 53.347778, lon: -6.259722 },
-        City { name: "Oslo", lat: 59.95, lon: 10.75 },
-        City { name: "Vancouver", lat: 49.25, lon: -123.1 },
-    ] {
-        println!("{}", city);
-    }
-
-    for color in [
-        Color { red: 128, green: 255, blue: 90 },
-        Color { red: 0, green: 3, blue: 254 },
-        Color { red: 0, green: 0, blue: 0 },
-    ] {
-        println!("{}", color);
-    }
-
-    let logical: bool = true;
-
-    let a_float: f64 = 1.0;
-    let an_integer = 5i32;
-
-    let default_float = 3.0;
-    let default_integer = 7;
-
-    let mut inferred_type = 12;
-    inferred_type = 4294977296i64;
-
-    let mut mutable = 12;
-    mutable = 21;
-
-    let mutable = true;
+    println!("1e4 is {}, -2.5e-3 is {}", 1e4, -2.5e-3);
 
 
+    println!("true AND false is {}", true && false);
+    println!("True OR false is {}", true || false);
+    println!("NOT True is {}",!true);
 
+    println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101);
+    println!("0011 OR 0101 is {:04b}", 0b0011u32 | 0b0101);
+    println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
+    println!("1 << 5 is {}", 1u32 << 5);
+    println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
 
-
-
-
-
-
+    println!("One million is written as {}", 1_000_000u32);
 
 }
